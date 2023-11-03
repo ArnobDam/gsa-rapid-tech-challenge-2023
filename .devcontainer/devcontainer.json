@@ -1,0 +1,13 @@
+{
+	"name": "GSA Rapid Tech Challenge",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/customink/codespaces-features/docker-in-docker-amzn:1": {}
+	},
+	"postStartCommand": "yarn install --cwd ./frontend && /bin/bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/docker_install.sh",
+	"forwardPorts": [8080, 4200, 5432 ]
+}
